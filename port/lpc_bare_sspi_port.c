@@ -120,7 +120,7 @@ static void lpc_udelay(uint32_t us)
     uint32_t ticks;
     uint32_t told, tnow, tcnt = 0;
     uint32_t reload = SysTick->LOAD;
-
+    return;
     ticks = us * reload / (1000000UL / 1000);
     told = SysTick->VAL;
     while (1)
@@ -168,8 +168,8 @@ void lpc_bare_sspi_init()
 {
     static const struct lpc_soft_spi_config soft_spi_config[] = {
         {.sck = PIN_NUM(2, 4),   // LD_DEN
-         .mosi = PIN_NUM(1, 27), // LD_BLU3
-         .miso = PIN_NUM(1, 25), // LD_GRN5
+         .mosi = PIN_NUM(1, 25), // LD_GRN5
+         .miso = PIN_NUM(1, 27), // LD_BLU3
          .bus_name = "sspi1"}};
 
     static struct lpc_soft_spi mm_sspi_bus[ITEM_NUM(soft_spi_config)];
