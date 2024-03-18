@@ -195,5 +195,4 @@ void lpc_bare_sspi_init()
                                     "sspi10",
                                     "sspi1",
                                     PIN_NUM(1, 29)); // LD_BLU5
-#define RT_SFUD_DEFAULT_SPI_CFG
 }
